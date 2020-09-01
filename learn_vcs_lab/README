@@ -1,0 +1,62 @@
+Basic Environment for Learning VCS simulator Control
+
+Lab01 : 
+        Topic:
+          Basic compile and simulation flow
+
+        file structure as following:
+          dut.v           # a simple behavior model, react with stimulus from testbench
+          tb.sv           # a simple test bench to drive stimulus to dut (design-under-test)
+          src.f           # filelist contain all source files
+          Makefile        # control VCS simulator
+
+        Makefile use target
+          make            # run compile + simulation
+          make comp       # run compile only
+          make sim        # run simulation only
+          make clean      # remove all generated files except log file
+          make cleanall   # remove all generated files
+
+Lab02 : 
+        Topic:
+          Add option, use +testdata=... to control testcase.
+
+        file structure as following:
+          dut.v           # a simple behavior model, react with stimulus from testbench
+          tb.sv           # a simple test bench to drive stimulus to dut (design-under-test)
+          src.f           # filelist contain all source files
+          Makefile        # control VCS simulator
+
+        Makefile use target
+          make            # run compile + simulation
+          make comp       # run compile only
+          make sim        # run simulation only
+          make clean      # remove all generated files except log file
+          make cleanall   # remove all generated files
+
+Lab03 : 
+        Topic:
+          Demo how to run multiple testcase simulation with one compile database.
+            1) create 'comp_dir' and run compile in this directory.
+            2) create 'sim_dir' for later simulation.
+            3) create 'sim1' directory under 'sim_dir' and link needed files from 'comp_dir'.
+            4) run 1st testcase simulation in background and redirect stdout/stderr to term.log file.
+            5) repeat step 2-4 for 2nd testcase simulation in 'sim2' directory under 'sim_dir'.
+          
+        Note:
+          1) The files needed for simulation are 'simv' executable and 'simv.daidir' directory.
+          2) sim1 and sim2 can be run simultaneously.
+
+        file structure as following:
+          dut.v           # a simple behavior model, react with stimulus from testbench
+          tb.sv           # a simple test bench to drive stimulus to dut (design-under-test)
+          src.f           # filelist contain all source files
+          Makefile        # control VCS simulator
+
+        Makefile use target
+          make            # run compile + simulation
+          make comp       # run compile only
+          make sim1       # run 1st testcase simulation only
+          make sim2       # run 2nd testcase simulation only
+          make clean      # remove all generated files except log file
+          make cleanall   # remove all generated files
