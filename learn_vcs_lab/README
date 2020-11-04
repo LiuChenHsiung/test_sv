@@ -60,3 +60,66 @@ Lab03 :
           make sim2       # run 2nd testcase simulation only
           make clean      # remove all generated files except log file
           make cleanall   # remove all generated files
+
+Lab04 : 
+        Topic:
+          Demo how to collect coverage, generate coverage report and review coverage report.
+            1) create 'comp_dir' and run compile in this directory.
+            2) create 'sim_dir' for later simulation.
+            3) create 'sim1' directory under 'sim_dir' and link needed files from 'comp_dir'.
+            4) run 1st testcase simulation in background and redirect stdout/stderr to term.log file.
+            5) repeat step 2-4 for 2nd testcase simulation in 'sim2' directory under 'sim_dir'.
+            6) wait a while to confirm sim1 and sim2 simulation finished.
+            ----------------------------------------------------------------------------------------
+          Additional step:
+            7) generate coverage report from coverage database (simv.vdb), use firefox to open report.
+
+        Note
+          1) Recommanded steps:
+                make            #
+                                # wait a while to confirm sim1 and sim2 simulation finished
+                make covrpt     # generate coverage report and use firefox to open report
+
+          2) Then to raise the coverage score, you can run following steps:
+                make sim3       #
+                                # wait a while to confirm sim3 simulation finished
+                make covrpt     # generate new coverage report
+
+        file structure as following:
+          dut.v           # a simple behavior model, react with stimulus from testbench
+          tb.sv           # a simple test bench to drive stimulus to dut (design-under-test)
+          src.f           # filelist contain all source files
+          Makefile        # control VCS simulator
+
+        Makefile use target
+          make            # run compile + simulation (sim1 and sim2 as Lab03)
+          make comp       # run compile only
+          make sim1       # run 1st testcase simulation only
+          make sim2       # run 2nd testcase simulation only
+          make sim3       # run 3nd testcase simulation only
+          make covrpt     # generate coverage report and use firefox to open report
+          make clean      # remove all generated files except log file
+          make cleanall   # remove all generated files
+
+Lab05 : 
+        Topic:
+          Demo how to dump waveform and Verdi debug tool practice.
+
+        Note
+          1) Recommanded steps:
+                make
+                make verdi
+
+        file structure as following:
+          dut.v           # a simple behavior model, react with stimulus from testbench
+          tb.sv           # a simple test bench to drive stimulus to dut (design-under-test)
+          src.f           # filelist contain all source files
+          Makefile        # control VCS simulator and Verdi debug tool
+
+        Makefile use target
+          make            # run compile + simulation
+          make comp       # run compile only
+          make sim        # run simulation only
+          make verdi      # open verdi debug tool
+          make clean      # remove all generated files except log file
+          make cleanall   # remove all generated files
