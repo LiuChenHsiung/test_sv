@@ -215,3 +215,31 @@ Lab08 :
           make verdi      # open verdi debug tool
           make clean      # remove all generated files except log file
           make cleanall   # remove all generated files
+
+Lab09 : 
+        Topic:
+          Learn how to use SystemVerilog Assertion (SVA) checker.
+          User Verdi to debug or review SVA. Generate coverage report with assertion.
+
+        Note
+          1) Recommanded steps:
+                make
+                make covrpt
+          2) Optional steps:
+                make verdi
+
+        file structure as following:
+          bcd_counter.v   # a simple one-digit BCD counter RTL design
+          bcd_2digit.v    # a two-digit BCD counter composed of two one-digit BCD counter
+          tb.sv           # a simple test bench to drive stimulus to dut (design-under-test)
+          src.f           # filelist contain all source files
+          Makefile        # control VCS simulator and Verdi debug tool
+
+        Makefile use target
+          make            # run compile + simulation
+          make comp       # run compile only
+          make sim        # run simulation only
+          make covrpt     # generate coverage report and use firefox to open report
+          make verdi      # open verdi debug tool
+          make clean      # remove all generated files except log file
+          make cleanall   # remove all generated files
