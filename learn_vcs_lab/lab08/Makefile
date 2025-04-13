@@ -1,5 +1,5 @@
 SRC     = -f src.f
-COMPOPT = -sverilog -cm line+tgl+fsm+cond+branch -cm_report noinitial
+COMPOPT = -sverilog -cm line+tgl+fsm+cond+branch -cm_report noinitial -debug_acc
 SIMOPT  = -l simulation.log -cm line+cond+fsm+tgl+branch +dump
 
 all: comp sim

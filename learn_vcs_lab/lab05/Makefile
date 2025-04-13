@@ -1,5 +1,5 @@
 SRC     = -f src.f
-COMPOPT = -sverilog
+COMPOPT = -sverilog -debug_acc
 SIMOPT  = +testdata="New World" +dump
 
 all: comp sim
